@@ -1,0 +1,18 @@
+﻿  Assembling GateTrampolin.asm...
+  dllmain.c
+C:\Users\Maor-PT\source\repos\userenv-syscalls\userenv-syscalls\dllmain.c(137,42): warning C4311: 'type cast': pointer truncation from 'HANDLE' to 'int'
+C:\Users\Maor-PT\source\repos\userenv-syscalls\userenv-syscalls\dllmain.c(192,35): warning C4312: 'type cast': conversion from 'int' to 'PVOID' of greater size
+C:\Users\Maor-PT\source\repos\userenv-syscalls\userenv-syscalls\dllmain.c(188,35): warning C4244: 'initializing': conversion from 'SIZE_T' to 'DWORD', possible loss of data
+C:\Users\Maor-PT\source\repos\userenv-syscalls\userenv-syscalls\dllmain.c(217,1): warning C4047: 'initializing': 'DWORD' differs in levels of indirection from 'void *'
+C:\Users\Maor-PT\source\repos\userenv-syscalls\userenv-syscalls\dllmain.c(218,1): warning C4047: 'initializing': 'DWORD' differs in levels of indirection from 'void *'
+  RecycleGate.c
+dllmain.obj : warning LNK4104: export of symbol 'DllCanUnloadNow' should be PRIVATE
+dllmain.obj : warning LNK4104: export of symbol 'DllGetClassObject' should be PRIVATE
+dllmain.obj : warning LNK4104: export of symbol 'DllRegisterServer' should be PRIVATE
+dllmain.obj : warning LNK4104: export of symbol 'DllUnregisterServer' should be PRIVATE
+     Creating library C:\Users\Maor-PT\source\repos\userenv-syscalls\x64\Release\userenv-syscalls.lib and object C:\Users\Maor-PT\source\repos\userenv-syscalls\x64\Release\userenv-syscalls.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 13 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  userenv-syscalls.vcxproj -> C:\Users\Maor-PT\source\repos\userenv-syscalls\x64\Release\userenv-syscalls.dll

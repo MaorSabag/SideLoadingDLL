@@ -1,0 +1,19 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(510,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (userenv-syscalls.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Assembling GateTrampolin.asm...
+  dllmain.c
+C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\SideLoadingDLL\dllmain.c(135,42): warning C4311: 'type cast': pointer truncation from 'HANDLE' to 'int'
+C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\SideLoadingDLL\dllmain.c(189,35): warning C4312: 'type cast': conversion from 'int' to 'PVOID' of greater size
+C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\SideLoadingDLL\dllmain.c(185,35): warning C4244: 'initializing': conversion from 'SIZE_T' to 'DWORD', possible loss of data
+C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\SideLoadingDLL\dllmain.c(213,1): warning C4047: 'initializing': 'DWORD' differs in levels of indirection from 'void *'
+C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\SideLoadingDLL\dllmain.c(214,1): warning C4047: 'initializing': 'DWORD' differs in levels of indirection from 'void *'
+  RecycleGate.c
+  Previous IPDB not found, fall back to full compilation.
+dllmain.obj : warning LNK4104: export of symbol 'DllCanUnloadNow' should be PRIVATE
+dllmain.obj : warning LNK4104: export of symbol 'DllGetClassObject' should be PRIVATE
+dllmain.obj : warning LNK4104: export of symbol 'DllRegisterServer' should be PRIVATE
+dllmain.obj : warning LNK4104: export of symbol 'DllUnregisterServer' should be PRIVATE
+     Creating library C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\x64\Release\SideLoadingDLL.lib and object C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\x64\Release\SideLoadingDLL.exp
+  Generating code
+  All 13 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SideLoadingDLL.vcxproj -> C:\Users\Maor-PT\Desktop\Programs\SideLoadingDLL\SideLoadingDLL\x64\Release\SideLoadingDLL.dll
