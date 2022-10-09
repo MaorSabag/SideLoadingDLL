@@ -28,5 +28,4 @@ Sideloading ncrypt.dll( meterpreter session)
 
 ## Credits 
 - [Sektor7's RTO Malware Essential Course](https://institute.sektor7.net/red-team-operator-malware-development-essentials)
-- [Flangvik](https://twitter.com/Flangvik)'s [SharpDllProxy](https://github.com/Flangvik/SharpDllProxy)
 - [thefLink](https://github.com/thefLink)'s [RecycledGate](https://github.com/thefLink/RecycledGate)
