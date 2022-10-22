@@ -7,7 +7,7 @@ See the below articles for more details
 https://flangvik.com/privesc/windows/bypass/2019/06/25/Sideload-like-your-an-APT.html
 https://flangvik.com/2019/07/24/Bypassing-AV-DLL-Side-Loading.html
 
-demo's is using GUP.exe signed from NotePad++, loading a malicious libcurl sideloading malware:
+demo's is using GUP.exe signed from NotePad++, loading a malicious ncrypt sideloading malware:
 
 Sideloading ncrypt.dll( meterpreter session)
 ![Meterpreter sideload](https://github.com/MaorSabag/SideLoadingDLL/blob/main/demo/screen-capture.gif)
