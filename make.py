@@ -332,7 +332,7 @@ def proxyFunctions(targetDLL):
     else:
         pe = pefile.PE(targetDLL)
         dll = targetDLL.strip(".dll") + "_origin"
-        os.system(f"cp {targetDLL} ./Output/{dll}.dll")
+        os.system(f"copy {targetDLL} Output/{dll}.dll")
         d = [pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_EXPORT"]]
         pe.parse_data_directories(directories=d)
         exports = [(e.ordinal, e.name.decode()) for e in pe.DIRECTORY_ENTRY_EXPORT.symbols if e.name]
@@ -394,7 +394,7 @@ def main():
         os.system('msbuild /nologo /verbosity:quiet /consoleloggerparameters:ErrorsOnly ./SideLoadingDLL/SideLoadingDLL.sln /t:Rebuild /p:Configuration=Release /p:Platform="x64"')
         
         print("[+] Moving everything to Output directory")
-        os.system(f"mv ./SideLoadingDLL/x64/Release/SideLoadingDLL.dll ./Output/{targetDLL.split('/')[-1]} && mv {outputFilename} ./Output/{outputFilename}")
+        os.system(f"move SideLoadingDLL/x64/Release/SideLoadingDLL.dll Output/{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
 
 if __name__ == "__main__":
     main()
