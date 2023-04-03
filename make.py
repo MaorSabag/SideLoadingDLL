@@ -393,8 +393,11 @@ def main():
         print("[+] Compiling DLL")
         os.system('msbuild /nologo /verbosity:quiet /consoleloggerparameters:ErrorsOnly ./SideLoadingDLL/SideLoadingDLL.sln /t:Rebuild /p:Configuration=Release /p:Platform="x64"')
         
+	if not os.path.exists('Output'):
+            os.makedirs('Output')
+	
         print("[+] Moving everything to Output directory")
-        os.system(f"move SideLoadingDLL/x64/Release/SideLoadingDLL.dll Output/{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
+        os.system(f"move .\\SideLoadingDLL\\x64\\Release\\SideLoadingDLL.dll .\\Output\\{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
 
 if __name__ == "__main__":
     main()
