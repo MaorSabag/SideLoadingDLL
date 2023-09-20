@@ -286,19 +286,19 @@ SideLoadingDLL! Made by MaorSabag!! v1.1
     print (banner)
 
 def xor(data, key):
-	key = str(key)
-	l = len(key)
-	output_str = ""
+    key = str(key)
+    l = len(key)
+    output_str = ""
 
-	for i in range(len(data)):
-		current = data[i]
-		current_key = key[i % len(key)]
-		try:
-			output_str += chr(current ^ ord(current_key))
-		except:
-			output_str += chr(ord(current) ^ ord(current_key))
-	
-	return output_str
+    for i in range(len(data)):
+        current = data[i]
+        current_key = key[i % len(key)]
+        try:
+            output_str += chr(current ^ ord(current_key))
+        except:
+            output_str += chr(ord(current) ^ ord(current_key))
+    
+    return output_str
 
 def encryptShellcode(raw_shellcode, output_filename, KEY):
     plaintext = open(raw_shellcode, "rb").read()
@@ -393,9 +393,8 @@ def main():
         print("[+] Compiling DLL")
         os.system('msbuild /nologo /verbosity:quiet /consoleloggerparameters:ErrorsOnly ./SideLoadingDLL/SideLoadingDLL.sln /t:Rebuild /p:Configuration=Release /p:Platform="x64"')
         
-	if not os.path.exists('Output'):
-            os.makedirs('Output')
-	
+    if not os.path.exists('Output'):
+        os.makedirs('Output')
         print("[+] Moving everything to Output directory")
         os.system(f"move .\\SideLoadingDLL\\x64\\Release\\SideLoadingDLL.dll .\\Output\\{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
 
