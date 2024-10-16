@@ -331,8 +331,9 @@ def proxyFunctions(targetDLL):
     # If our DLL is in  a local directory let's make a copy and proxy to it
     else:
         pe = pefile.PE(targetDLL)
-        dll = targetDLL.strip(".dll") + "_origin"
-        os.system(f"copy {targetDLL} Output/{dll}.dll")
+        tempdllname, ext = os.path.splitext(targetDLL)
+        dll = tempdllname + "_origin" + ext
+        os.system(f"copy {targetDLL} Output\{dll}.dll")
         d = [pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_EXPORT"]]
         pe.parse_data_directories(directories=d)
         exports = [(e.ordinal, e.name.decode()) for e in pe.DIRECTORY_ENTRY_EXPORT.symbols if e.name]
@@ -395,8 +396,8 @@ def main():
         
     if not os.path.exists('Output'):
         os.makedirs('Output')
-        print("[+] Moving everything to Output directory")
-        os.system(f"move .\\SideLoadingDLL\\x64\\Release\\SideLoadingDLL.dll .\\Output\\{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
+    print("[+] Moving everything to Output directory")
+    os.system(f"move .\\SideLoadingDLL\\x64\\Release\\SideLoadingDLL.dll .\\Output\\{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
 
 if __name__ == "__main__":
     main()
