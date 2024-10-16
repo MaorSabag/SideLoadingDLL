@@ -396,8 +396,8 @@ def main():
         
     if not os.path.exists('Output'):
         os.makedirs('Output')
-        print("[+] Moving everything to Output directory")
-        os.system(f"move .\\SideLoadingDLL\\x64\\Release\\SideLoadingDLL.dll .\\Output\\{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
+    print("[+] Moving everything to Output directory")
+    os.system(f"move .\\SideLoadingDLL\\x64\\Release\\SideLoadingDLL.dll .\\Output\\{targetDLL.split('/')[-1]} && move {outputFilename} Output/{outputFilename}")
 
 if __name__ == "__main__":
     main()
